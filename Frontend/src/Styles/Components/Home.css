@@ -1,0 +1,989 @@
+/* =========================
+   HOME BASE
+========================= */
+.Home {
+  position: relative;
+  background: #0b0d12;
+  overflow: hidden;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+/* =========================
+   BACKGROUND TEXT
+========================= */
+.Home-bgText {
+  position: absolute;
+  inset: 0;
+  top: 30px;
+  bottom: auto;
+  z-index: 0.9 ; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 900;
+  font-size: clamp(4.5rem, 10vw, 10rem);
+  line-height: 0.95;
+  opacity: 0.12; /* keep it background-like */
+  pointer-events: none;
+  user-select: none;
+}
+
+.Home-bgText span {
+  white-space: nowrap;
+}
+
+/* =========================
+   PANELS WRAPPER
+========================= */
+.Home-panels {
+  position: relative;
+  z-index: 5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 220px;
+}
+
+/* =========================
+   GLASS PANEL BASE
+========================= */
+/* =========================
+   GLASS PANEL BASE (HORIZONTAL)
+========================= */
+.Home-panel {
+  position: relative;
+  width: 420px;      /* wider */
+  height: 260px;     /* shorter */
+  padding: 22px 26px;
+  border-radius: 26px;
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow:
+    0 0 80px rgba(59, 130, 246, 0.12),
+    inset 0 0 24px rgba(255, 255, 255, 0.03);
+  transition: transform 0.6s ease;
+}
+
+/* =========================
+   PANEL TILT (CREDIT CARD FEEL)
+========================= */
+.Home-panelLeft {
+  transform: perspective(1200px) rotateY(8deg) rotateZ(70deg) rotateX(30deg)
+}
+
+.Home-panelRight {
+  transform: perspective(1200px) rotateY(-8deg) rotateZ(-60deg) rotateX(30deg)
+}
+
+/* =========================
+   OPTIONAL HOVER LIFT (PREMIUM)
+========================= */
+.Home-panel.Home-panelLeft:hover {
+  transform: perspective(1200px) rotateY(40deg) rotateZ(0deg) translateZ(30px) translateY(-100px)
+}
+.Home-panel.Home-panelRight:hover {
+  transform: perspective(1200px) rotateY(-40deg) rotateZ(0deg) translateY(-100px) translateZ(30px)
+}
+
+/* =========================
+   PANEL CONTENT
+========================= */
+.Home-brand {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  opacity: 0.85;
+  color: aqua;
+}
+
+/* AMOUNT AREA — CENTER OF CARD */
+.Home-amount {
+  font-family: "Satoshi", sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.14em;
+
+}
+
+.Home-label {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  opacity: 0.7;
+   
+}
+
+/* STATS (CARD 2) */
+.Home-stats span {
+  display: block;
+  margin: 10px 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+/* FOOTER (HORIZONTAL — INTENTIONAL) */
+.Home-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  opacity: 0.75;
+  color:aqua ; 
+}
+
+.Home-live {
+  opacity: 1;
+}
+
+/* =========================
+   SUBTLE BLUE EDGE LIGHT
+========================= */
+.Home-panel::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    120deg,
+    transparent 40%,
+    rgba(59, 130, 246, 0.12),
+    transparent 60%
+  );
+  opacity: 0.6;
+}
+
+/* =========================
+   VALUE FLOW SECTION
+========================= */
+.Flow {
+  position: relative;
+  background: #0b0d12;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 80px;
+  overflow: hidden;
+  color: white ;
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+.Flow-title {
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 0.25em;
+  opacity: 0.8;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* =========================
+   FLOW CARDS WRAPPER
+========================= */
+/* =========================
+   FLOW CARDS WRAPPER (UNCHANGED)
+========================= */
+.Flow-cards {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 140px;
+  z-index: 2;
+}
+
+/* =========================
+   FLOW CARD BASE — REFINED
+========================= */
+.Flow-card {
+  position: relative;
+  width: 220px;
+  height: 140px;
+  padding: 20px;
+  border-radius: 22px;
+  backdrop-filter: blur(30px) saturate(110%);
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  transition:
+    box-shadow 0.4s ease,
+    border-color 0.4s ease,
+    background 0.4s ease;
+   animation: Flow-react 12s linear infinite ; 
+}
+
+.Flow-cardMoney {
+  position: relative;
+  width: 260px;
+  height: 160px;
+  padding: 18px 20px;
+  border-radius: 22px;
+  backdrop-filter: blur(20px) saturate(115%);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.06);
+  transition:
+    box-shadow 0.4s ease,
+    border-color 0.4s ease,
+    background 0.4s ease;
+}
+
+.Flow-cardTop {
+    color: aqua;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Flow-cardIssuer,
+.Flow-cardNetwork {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  opacity: 0.75;
+}
+
+.Flow-cardNumber {
+  margin-top: 8px;
+  font-family: "Satoshi", "Inter", -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.25em;
+  opacity: 0.9;
+}
+
+
+.Flow-cardStatus {
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  opacity: 0.7;
+}
+
+.Flow-cardMeta {
+    color: aqua;
+  align-self: flex-end;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  opacity: 0.65;
+}
+
+.Flow-cardMoney {
+  animation: Flow-react 10s linear infinite ; 
+}
+
+.Flow-cardMoney[data-flow="1"] {
+  animation-delay: 0s;
+}
+
+.Flow-glow {
+  position: absolute;
+  top: 50%;
+  left: -45%;
+  width: 190%;
+  height: 80px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(15, 54, 117, 0.376),
+    transparent
+  );
+  filter: blur(55px);
+  transform: translateY(-50%);
+  animation: Flow-move 10s cubic-bezier(0.22, 0.36, 0.36, 1) infinite; 
+  pointer-events: none;
+}
+
+
+@keyframes Flow-move {
+  0% {
+    transform: translateX(-40%) translateY(-55%);
+    opacity: 0;
+  }
+
+  /* ENTERING — SLOW & CURVED */
+  10% {
+    transform: translateX(-30%) translateY(-50%);
+    opacity: 1;
+  }
+
+  /* MAIN FLOW */
+  50% {
+    transform: translateX(0%) translateY(-50%);
+    opacity: 1;
+  }
+
+  /* EXITING — BEND AWAY */
+  90% {
+    transform: translateX(30%) translateY(-45%);
+    opacity: 1;
+  }
+
+  /* FADE OUT BEFORE LOOP */
+  100% {
+    transform: translateX(40%) translateY(-40%);
+    opacity: 0;
+  }
+}
+
+/* =========================
+   CARD REACTION TIMING
+========================= */
+.Flow-card[data-flow="1"] { animation-delay: 0s; }
+.Flow-card[data-flow="2"] { animation-delay: 2.5s; }
+.Flow-card[data-flow="3"] { animation-delay: 5s; }
+.Flow-card[data-flow="4"] { animation-delay: 7.5s; }
+
+/* =========================
+   CARD GLOW RESPONSE
+========================= */
+@keyframes Flow-react {
+  0% {
+    box-shadow: none;
+    border-color: rgba(255, 255, 255, 0.14);
+  }
+  15% {
+    box-shadow:
+      0 18px 40px rgba(0, 0, 0, 0.35),
+      0 0 22px rgba(0, 255, 255, 0.35);
+    border-color: rgba(0, 255, 255, 0.9); 
+  }
+  30% {
+    box-shadow: none;
+    border-color: rgba(255, 255, 255, 0.14);
+  }
+  100% {
+    box-shadow: none;
+    border-color: rgba(255, 255, 255, 0.14);
+  }
+}
+.Lifecycle {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  padding: 120px 8vw;
+  background: #0b0d12;
+  color: white;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+.Lifecycle-left {
+  position: relative;
+  height: 100%;
+}
+
+.Lifecycle-principle {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  z-index: 0;
+  font-family: "Satoshi", "Inter", sans-serif;
+  font-weight: 700;
+  line-height: 0.9;
+  pointer-events: none;
+  text-align: left;      
+}
+
+.Lifecycle-principle span {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.span1 {
+  color: rgba(59,130,246,0.7);
+  font-size: 2rem;
+  letter-spacing: 0.22em;
+}
+.line1:hover{
+  opacity: 1;
+}
+.span2 {
+  font-size: 6rem;
+  letter-spacing: 0.08em;  
+}
+
+.Lifecycle-curve {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.Lifecycle-curve path {
+  filter: drop-shadow(0 0 8px rgba(59,130,246,0.25));
+}
+
+.Lifecycle-states {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  z-index: 2;
+}
+.Lifecycle-state {
+  position: absolute;
+  padding: 12px 22px;
+  border-radius: 999px;
+  backdrop-filter: blur(16px);
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.12);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  opacity: 0.65;
+  animation: Lifecycle-pulse 10s linear infinite;
+  pointer-events: auto ;
+}
+
+.Lifecycle-state:hover {
+      opacity: 1;
+     border-color: rgba(59,130,246,0.5); 
+
+}
+
+.Lifecycle-state[data-step="1"] {
+  top: 8%;
+  left: 80%;
+  animation-delay: 0s;
+}
+
+.Lifecycle-state[data-step="2"] {
+  top: 30%;
+  left: 65%;
+  animation-delay: 2.5s;
+}
+
+
+.Lifecycle-state[data-step="3"] {
+  top: 47%;
+  left: 42%;
+  animation-delay: 5s;
+}
+
+
+.Lifecycle-state[data-step="4"] {
+  top: 58%;
+  left: 12%;
+  animation-delay: 7.5s;
+}
+
+
+.Lifecycle-right {
+  margin-left: 100px ;
+  max-width: 460px;
+  font-family: "Satoshi", "Inter", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2.1;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.85);
+  transform: translateY(-120px);
+}
+
+.Lifecycle-right p {
+  margin: 0;
+  opacity: 0.75;
+}
+
+.Lifecycle-right p + p {
+  margin-top: 18px;
+}
+
+
+.Lifecycle-emphasis {
+  margin-top: 28px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  font-size: 1.8rem;
+   display: inline-block;
+  white-space: nowrap; 
+  opacity: 1;
+  color: rgba(255, 255, 255, 1);
+}
+
+.Lifecycle-emphasis::after {
+  content: "";
+  display: block;
+  margin-top: 10px;
+  width: 300px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(59,130,246,0.9),
+    rgba(59,130,246,0.2)
+  );
+}
+
+@keyframes Lifecycle-flow {
+  0% {
+    transform: translateX(-50%) translateY(-20%);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) translateY(40%);
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes Lifecycle-pulse {
+  0% {
+    opacity: 0.5;
+    border-color: rgba(255,255,255,0.12);
+    transform: translateY(0);
+  }
+
+  15% {
+    opacity: 1;
+    border-color: rgba(59,130,246,0.5);
+    transform: translateY(-2px);
+  }
+
+  30% {
+    opacity: 0.5;
+    border-color: rgba(255,255,255,0.12);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
+
+
+
+@media (max-width: 1200px) {
+  .Home-panels {
+    gap: 120px;
+  }
+
+  .Home-panel {
+    width: 360px;
+    height: 230px;
+  }
+
+  .Flow-cards {
+    gap: 90px;
+  }
+
+  .Lifecycle {
+    grid-template-columns: 1fr;
+    gap: 120px;
+  }
+
+  .Lifecycle-right {
+    margin-left: 0;
+    transform: translateY(0);
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .Lifecycle-emphasis::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .Home-panels {
+    flex-direction: column;
+    gap: 80px;
+    padding-top: 120px;
+  }
+
+  .Home-panelLeft,
+  .Home-panelRight {
+    transform: none;
+  }
+
+  .Flow-cards {
+    flex-wrap: wrap;
+    gap: 60px;
+  }
+
+  .Flow-cardMoney {
+    width: 240px;
+    height: 150px;
+  }
+
+  .Lifecycle-principle {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  .Lifecycle-curve,
+  .Lifecycle-states {
+    height: 60%;
+  }
+}
+
+
+@media (max-width: 600px) {
+  /* HERO */
+  .Home-bgText {
+    font-size: clamp(2.8rem, 12vw, 4rem);
+    opacity: 0.12;
+  }
+
+  .Home-panels {
+    min-height: auto;
+    padding-bottom: 80px;
+  }
+
+  .Home-panel {
+    width: 90%;
+    height: auto;
+  }
+
+  /* FLOW */
+  .Flow-title {
+    font-size: 26px;
+    letter-spacing: 0.18em;
+  }
+
+  .Flow-cards {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  /* LIFECYCLE */
+  .Lifecycle {
+    padding: 80px 6vw;
+  }
+
+  .Lifecycle-left {
+    min-height: 500px;
+  }
+
+  /* Curve simplified */
+  .Lifecycle-curve {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Stack states vertically */
+  .Lifecycle-state {
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+
+  .Lifecycle-state[data-step="1"] { top: 18%; }
+  .Lifecycle-state[data-step="2"] { top: 34%; }
+  .Lifecycle-state[data-step="3"] { top: 50%; }
+  .Lifecycle-state[data-step="4"] { top: 66%; }
+
+  /* Right text */
+  .Lifecycle-right {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    letter-spacing: 0.12em;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .Lifecycle-emphasis {
+    font-size: 1.3rem;
+    letter-spacing: 0.14em;
+  }
+
+  .Lifecycle-emphasis::after {
+    width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+  will-change: opacity, transform;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.Home-bgText[data-reveal] {
+  transform: translateY(110px);
+  opacity: 0;
+  transition: opacity 1.15s ease, transform 1.15s ease;
+  will-change: opacity, transform;
+}
+
+.Home-bgText.is-visible {
+  transform: translateY(0);
+  opacity: 0.67; 
+}
+
+@media (max-width: 600px) {
+  [data-reveal] {
+    transform: translateY(18px);
+    transition: opacity 0.75s ease, transform 0.75s ease;
+  }
+
+  .Home-bgText[data-reveal] {
+    transform: translateY(70px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  .Home-bgText[data-reveal] {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE FIX PACK
+   (paste at the END)
+========================= */
+
+html, body { overflow-x: hidden; }
+* { box-sizing: border-box; }
+
+.Home,
+.Flow,
+.Lifecycle { width: 100%; overflow-x: hidden; }
+
+/* ---------- HERO / PANELS ---------- */
+@media (max-width: 768px) {
+  .Home-panels{
+    min-height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;              /* was huge */
+    padding: 110px 16px 70px;
+  }
+
+  .Home-panel{
+    width: min(92vw, 420px);
+    height: auto;
+    padding: 18px 18px;
+    border-radius: 22px;
+  }
+
+  /* remove hard tilts on mobile */
+  .Home-panelLeft,
+  .Home-panelRight{
+    transform: none !important;
+  }
+
+  /* disable crazy hover jumps on touch devices */
+  .Home-panel.Home-panelLeft:hover,
+  .Home-panel.Home-panelRight:hover{
+    transform: none !important;
+  }
+
+  .Home-amount{
+    font-size: 1.4rem;
+    letter-spacing: 0.10em;
+  }
+
+  .Home-bgText{
+    top: 18px;
+    font-size: clamp(2.2rem, 14vw, 4.2rem);
+    line-height: 0.92;
+    opacity: 0.10;
+  }
+}
+
+/* ---------- FLOW SECTION ---------- */
+@media (max-width: 768px) {
+  .Flow{
+    padding: 70px 16px 90px;
+    gap: 44px;
+  }
+
+  .Flow-title{
+    font-size: 22px;
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+  }
+
+  .Flow-cards{
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .Flow-card,
+  .Flow-cardMoney{
+    width: min(92vw, 360px);
+    height: auto;
+  }
+
+  .Flow-card{
+    min-height: 110px;
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .Flow-cardMoney{
+    min-height: 140px;
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .Flow-glow{
+    left: -70%;
+    width: 240%;
+    height: 70px;
+    filter: blur(45px);
+  }
+
+  .Flow-cardNumber{
+    font-size: 1rem;
+    letter-spacing: 0.18em;
+    word-break: break-word;
+  }
+}
+
+/* ---------- LIFECYCLE SECTION ---------- */
+@media (max-width: 900px) {
+  .Lifecycle{
+    grid-template-columns: 1fr;
+    padding: 80px 16px 90px;
+    gap: 42px;
+  }
+
+  .Lifecycle-left{
+    min-height: 520px;      /* ensures curve + pills fit */
+  }
+
+  .Lifecycle-principle{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0 0 18px;
+    text-align: center;
+  }
+
+  .span1{
+    font-size: 1.15rem;
+    letter-spacing: 0.16em;
+  }
+
+  .span2{
+    font-size: clamp(2.3rem, 12vw, 3.6rem);
+    letter-spacing: 0.06em;
+  }
+
+  .Lifecycle-curve,
+  .Lifecycle-states{
+    top: 90px;
+    height: 360px;          /* fixed height so it doesn't overflow */
+  }
+
+  /* Make pills centered and stacked cleanly */
+  .Lifecycle-state{
+    left: 50% !important;
+    transform: translateX(-50%);
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    padding: 10px 16px;
+    opacity: 0.9;           /* readability on mobile */
+  }
+
+  .Lifecycle-state[data-step="1"]{ top: 12%; }
+  .Lifecycle-state[data-step="2"]{ top: 32%; }
+  .Lifecycle-state[data-step="3"]{ top: 52%; }
+  .Lifecycle-state[data-step="4"]{ top: 72%; }
+
+  .Lifecycle-right{
+    margin-left: 0;
+    max-width: 100%;
+    text-align: center;
+    transform: none;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    letter-spacing: 0.10em;
+  }
+
+  .Lifecycle-emphasis{
+    font-size: 1.25rem;
+    letter-spacing: 0.12em;
+    white-space: normal;    /* avoid horizontal overflow */
+  }
+
+  .Lifecycle-emphasis::after{
+    width: 180px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ---------- EXTRA SMALL PHONES ---------- */
+@media (max-width: 420px) {
+  .Home-panels{ padding-top: 96px; gap: 22px; }
+  .Home-panel{ padding: 16px; border-radius: 20px; }
+  .Home-footer{ font-size: 0.6rem; }
+
+  .Flow{ padding: 60px 14px 80px; }
+  .Flow-title{ font-size: 20px; }
+
+  .Lifecycle-curve,
+  .Lifecycle-states{
+    height: 320px;
+  }
+
+  .Lifecycle-state{
+    width: 92%;
+    text-align: center;
+  }
+}
+
+/* ---------- TOUCH DEVICES: disable hover tilt globally ---------- */
+@media (hover: none) and (pointer: coarse) {
+  .Home-panel:hover{
+    transform: none !important;
+  }
+}
+
+/* Hide background text on phones */
+@media (max-width: 600px) {
+  .Home-bgText {
+    display: none !important;
+  }
+}

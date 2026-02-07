@@ -1,0 +1,301 @@
+/* ================================
+   PAGE BACKGROUND
+================================ */
+.property-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: radial-gradient(1200px 600px at top center,
+      #1a1a1d 0%,
+      #0f0f11 60%);
+}
+
+/* ================================
+   CONTAINER
+================================ */
+.property-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(180deg,
+      rgba(30, 30, 34, 0.95),
+      rgba(18, 18, 20, 0.95));
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+/* ================================
+   HEADER
+================================ */
+.property-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.property-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #f9fafb;
+  letter-spacing: 0.2px;
+}
+
+.status-badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  background: rgba(245, 158, 11, 0.16);
+  color: #fbbf24;
+}
+
+/* ================================
+   LAYOUT
+================================ */
+.property-layout {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  gap: 28px;
+}
+
+/* ================================
+   CARDS
+================================ */
+.preview-card {
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(0, 0, 0, 0.35));
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.preview-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.preview-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+
+.preview-card p,
+.preview-card a {
+  color: #e5e7eb;
+  font-size: 14px;
+  margin-bottom: 6px;
+  text-decoration: none;
+}
+
+/* ================================
+   IMAGE GRID
+================================ */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 10px;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.image-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+}
+
+/* ================================
+   INPUTS
+================================ */
+.preview-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e5e7eb;
+  outline: none;
+  transition: border 0.2s ease, background 0.2s ease;
+}
+
+.preview-card input::placeholder {
+  color: #9ca3af;
+}
+
+.preview-card input:focus {
+  border-color: #22c55e;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.preview-card input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+.action-row button {
+  width: 100%;
+  height: 48px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  font-weight: 600;
+}
+
+/* PRIMARY – MINT */
+.preview-card .mint-btn {
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid rgba(85, 255, 7, 0.375);
+  color: #3dbd72;
+}
+
+.preview-card .mint-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(34, 197, 94, 0.35);
+}
+
+/* DANGER – REJECT */
+.preview-card .reject-btn {
+  margin-top: 10px;
+  background: transparent;
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.35);
+}
+
+.preview-card .reject-btn:hover:not(:disabled) {
+  background: rgba(248, 113, 113, 0.1);
+  box-shadow: 0 10px 26px rgba(248, 113, 113, 0.25);
+}
+
+.preview-card button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ================================
+   FEEDBACK BANNERS
+================================ */
+.error-banner {
+  background: rgba(220, 38, 38, 0.12);
+  color: #f87171;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.success-banner {
+  background: rgba(16, 185, 129, 0.14);
+  color: #34d399;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+/* ================================
+   UTILITIES
+================================ */
+.muted {
+  color: #9ca3af;
+}
+
+.small {
+  font-size: 12px;
+}
+
+/* ================================
+   ACTION BUTTON ROW
+================================ */
+.action-row {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.action-row button {
+  flex: 1;
+  height: 48px;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  .property-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================================
+   ADMIN FORM LAYOUT
+================================ */
+.admin-form-row {
+  display: grid;
+  grid-template-columns: 1.4fr 2fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* LEFT: vertical inputs */
+.token-fields-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* RIGHT: textarea */
+.admin-review-field textarea {
+  width: 100%;
+  height: 100%;
+  min-height: 145px;
+  padding: 9px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e5e7eb;
+  resize: vertical;
+  outline: none;
+}
+
+.admin-review-field textarea:focus {
+  border-color: #22c55e;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  .admin-form-row {
+    grid-template-columns: 1fr;
+  }
+}

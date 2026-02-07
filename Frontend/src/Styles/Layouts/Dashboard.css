@@ -1,0 +1,12 @@
+.dashboard-layout {
+  min-height: 100vh;
+  background: #0e0f13;
+  display: flex;
+  font-family: "Inter", system-ui;
+}
+
+.dashboard-content {
+  flex: 1;
+  margin-left: 120px; /* space for floating sidebar */
+  padding: 32px;
+}

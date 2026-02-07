@@ -1,0 +1,150 @@
+.admin-pending-page {
+  min-height: 100vh;
+  padding: 32px;
+  color: #e5e7eb;
+  font-family: "Inter", system-ui;
+}
+
+.admin-pending-page h2 {
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  margin-bottom: 22px;
+  color: #f3f4f6;
+}
+
+/* GRID */
+.admin-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 18px;
+}
+
+/* CARD */
+.admin-property-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.02));
+  border-radius: 18px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+}
+
+/* kill overlays completely */
+.admin-property-card::before,
+.admin-property-card::after {
+  content: none !important;
+}
+
+.admin-property-card:hover {
+  box-shadow:
+  0 22px 60px rgba(0,0,0,0.65),
+  0 0 0 1px rgba(59,130,246,0.12);
+  transform: translateY(-3px);
+  border-color: rgba(59, 130, 246, 0.35); /* subtle blue */
+}
+
+.admin-property-card:active {
+  transform: translateY(-1px);
+}
+/* HEADER */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.property-title {
+  font-size: 16px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  color: #f9fafb;
+  max-width: 75%;
+  line-height: 1.25;
+}
+
+/* STATUS */
+.status-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.status-badge.pending {
+  background: rgba(255, 159, 79, 0.12);
+  color: #FFB06A;
+  border-color: rgba(255, 159, 79, 0.22);
+}
+
+/* BODY */
+.card-body p {
+  font-size: 13px;
+  color: rgba(229, 231, 235, 0.88);
+  margin-bottom: 7px;
+  line-height: 1.35;
+}
+
+.card-body span {
+  color: rgba(156, 163, 175, 0.95);
+  font-weight: 600;
+}
+
+/* FOOTER */
+.card-footer {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submitted-date {
+  font-size: 12px;
+  color: rgba(156, 163, 175, 0.95);
+}
+
+.review-arrow {
+  font-size: 18px;
+  color: rgba(156, 163, 175, 0.95);
+  transform: translateX(0);
+  transition: transform 0.16s ease, color 0.16s ease;
+}
+
+.admin-property-card:hover .review-arrow {
+  transform: translateX(4px);
+  color: rgba(229, 231, 235, 0.95);
+}
+
+/* EMPTY + LOADING */
+.empty-text,
+.admin-loading {
+  color: rgba(156, 163, 175, 0.95);
+  font-size: 14px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 520px) {
+  .admin-pending-page {
+    padding: 18px;
+  }
+
+  .admin-card-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .admin-property-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+}

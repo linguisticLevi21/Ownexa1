@@ -1,0 +1,470 @@
+/* =========================
+   PAGE
+========================= */
+
+.txn-page {
+  max-width: 1200px;
+  margin: 0 auto; 
+}
+.txn-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #f9fafb;
+  margin-bottom: 24px;
+}
+
+.txn-loading,
+.txn-empty {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.txn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.txn-card {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(20, 22, 27, 0.92),
+      rgba(16, 18, 24, 0.92)
+    ),
+    rgba(96, 165, 250, 0.04);
+
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 18px 20px;
+
+  border: 1px solid rgba(96, 165, 250, 0.16);
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.txn-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(96, 165, 250, 0.3);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(96, 165, 250, 0.08);
+}
+
+/* =========================
+   TOP
+========================= */
+
+.txn-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.txn-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.txn-token {
+  font-size: 15px;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.txn-date {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.txn-status {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.txn-status.SUCCESS {
+  background: rgba(34, 197, 94, 0.18);
+  color: #22c55e;
+}
+
+.txn-status.validated {
+  background: rgba(34, 197, 94, 0.18);
+  color: #22c55e;
+}
+
+.txn-status.pending {
+  background: rgba(234, 179, 8, 0.18);
+  color: #eab308;
+}
+
+.txn-status.failed {
+  background: rgba(239, 68, 68, 0.18);
+  color: #ef4444;
+}
+
+/* =========================
+   MID
+========================= */
+
+.txn-mid {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+/* =========================
+   BOTTOM
+========================= */
+
+.txn-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.txn-total {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.txn-link {
+  font-size: 13px;
+  color: #93c5fd;
+  text-decoration: none;
+  opacity: 0.85;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.txn-link:hover {
+  opacity: 1;
+  transform: translateX(2px);
+  text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+  .txn-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.txn-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .txn-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+}
+
+
+/* ===============================
+   SELL PROPERTY MODAL (OWNEXA THEME)
+=============================== */
+/* ===============================
+   SELL PROPERTY MODAL (DARK THEME)
+=============================== */
+
+.sell-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+.sell-modal {
+  width: 100%;
+  max-width: 440px;
+  background: linear-gradient(145deg, #020617, #020617);
+  border-radius: 16px;
+  padding: 26px 26px;
+  box-shadow: 0 25px 60px rgba(37, 99, 235, 0.25);
+  animation: scaleIn 0.3s ease;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+/* Header */
+.sell-modal h2 {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 6px;
+  color: #f8fafc;
+}
+
+/* Property Title */
+.modal-title {
+  text-align: center;
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+/* Minimum Price */
+.modal-min {
+  background: rgba(30, 41, 59, 0.6);
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 13px;
+  color: #e2e8f0;
+  margin-bottom: 12px;
+  font-weight: 500;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+/* Info Text */
+.sell-modal p {
+  color: #94a3b8;
+}
+
+/* Input Fields */
+.sell-modal input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid rgba(99, 102, 241, 0.4);
+  border-radius: 9px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.25s ease;
+  background: rgba(2, 6, 23, 0.9);
+  color: #f8fafc;
+}
+
+/* Focus */
+.sell-modal input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+/* SELL Confirm Input */
+.sell-confirm-input {
+  text-align: center;
+  letter-spacing: 1.3px;
+  font-weight: 600;
+  color: #93c5fd;
+}
+
+/* When Correct */
+.sell-confirm-input:valid {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
+}
+
+/* ===============================
+   BUTTONS
+=============================== */
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px; /* MORE SPACE BETWEEN BUTTONS */
+  margin-top: 24px;
+}
+
+/* Cancel Button */
+.cancel-btn {
+  flex: 1;
+  background: rgba(30, 41, 59, 0.9);
+  color: #e2e8f0;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  padding: 10px 0;
+  border-radius: 9px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.cancel-btn:hover {
+  background: rgba(51, 65, 85, 0.9);
+}
+
+/* Confirm Button */
+.confirm-btn {
+  flex: 1;
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #6366f1
+  );
+  color: #ffffff;
+  border: none;
+  padding: 10px 0;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: 0 8px 22px rgba(99, 102, 241, 0.35);
+}
+
+.confirm-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(99, 102, 241, 0.5);
+}
+
+.confirm-btn:disabled {
+  background: rgba(99, 102, 241, 0.25);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* ===============================
+   ANIMATIONS
+=============================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+=============================== */
+
+@media (max-width: 480px) {
+
+  .sell-modal {
+    width: 92%;
+    padding: 22px 20px;
+  }
+
+  .modal-actions {
+    flex-direction: column-reverse;
+    gap: 14px;
+  }
+
+  .cancel-btn,
+  .confirm-btn {
+    width: 100%;
+  }
+}
+
+/* ===============================
+   PREVIOUS PROPERTIES SECTION
+=============================== */
+
+.txn-subtitle {
+  margin-top: 45px;
+  margin-bottom: 18px;
+  padding-top: 22px;
+  border-top: 2px solid #e2e8f0;
+
+  font-size: 20px;
+  font-weight: 600;
+  color: #1088c0;
+}
+
+/* Slightly faded look for old properties */
+.previous-properties {
+  opacity: 0.92;
+}
+
+/* Dim previous cards */
+.previous-card {
+  background: linear-gradient(
+    135deg,
+    #fafcff,
+    #f3f7ff
+  );
+  border: 1px solid #dbeafe;
+  filter: grayscale(8%);
+  transition: all 0.25s ease;
+}
+
+.previous-card:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: translateY(-2px);
+}
+
+/* SOLD badge style */
+.holding-status.SOLD {
+  background: linear-gradient(
+    135deg,
+    #64748b,
+    #475569
+  );
+  color: #ffffff;
+  font-size: 12px;
+  padding: 4px 9px;
+  border-radius: 7px;
+  font-weight: 500;
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+=============================== */
+
+@media (max-width: 480px) {
+
+  .sell-modal {
+    width: 92%;
+    padding: 22px 18px;
+  }
+
+  .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .cancel-btn,
+  .confirm-btn {
+    width: 100%;
+  }
+}

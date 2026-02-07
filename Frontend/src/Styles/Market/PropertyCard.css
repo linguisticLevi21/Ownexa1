@@ -1,0 +1,357 @@
+/* =========================
+   PAGE
+========================= */
+.property-buy-page {
+  min-height: 100vh;
+  background:
+    #0b0d12;
+  padding: 36px 22px;
+  color: #e5e7eb;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.property-buy-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 28px;
+}
+
+/* =========================
+   LEFT / RIGHT
+========================= */
+.property-left {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.property-right {
+  position: relative;
+}
+
+/* =========================
+   GLASS CARD (REFERENCE STYLE)
+========================= */
+.glass-card {
+  background:
+    linear-gradient(180deg, rgba(20,22,27,0.9), rgba(16,18,24,0.9));
+  backdrop-filter: blur(16px);
+  border-radius: 22px;
+  border: 1px solid #24262d;
+  box-shadow:
+    0 18px 60px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ultra-subtle blue frost */
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(96,165,250,0.06),
+    rgba(96,165,250,0.015) 45%,
+    transparent 70%
+  );
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* =========================
+   PROPERTY MAIN
+========================= */
+.property-main {
+  padding: 24px;
+}
+
+/* IMAGE GRID */
+.property-image-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-auto-rows: 150px;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.property-image-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.75);
+}
+
+/* =========================
+   DETAILS
+========================= */
+.property-main .property-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #f9fafb;
+  letter-spacing: -0.01em;
+}
+
+.detail-row.full {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #9ca3af;
+  margin-bottom: 14px;
+}
+
+.detail-row svg {
+  color: #93c5fd;
+  opacity: 0.65;
+}
+
+/* GRID */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 18px;
+  margin-bottom: 18px;
+}
+
+/* ITEM */
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #e5e7eb;
+
+  background: rgba(255, 255, 255, 0.035);
+  padding: 10px 14px;
+  border-radius: 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-item svg {
+  color: #93c5fd;
+  opacity: 0.6;
+}
+
+/* =========================
+   MARKET CARD
+========================= */
+.market-card {
+  padding: 22px;
+}
+
+.market-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #f9fafb;
+}
+
+/* =========================
+   PRIMARY BUY INLINE
+========================= */
+.primary-buy-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* INPUT */
+.primary-buy-row input {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 14px;
+  border: 1px solid #2a2d36;
+  background: rgba(8, 9, 12, 0.9);
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+.primary-buy-row input::placeholder {
+  color: #6b7280;
+}
+
+.primary-buy-row input:focus {
+  outline: none;
+  border-color: rgba(96,165,250,0.4);
+}
+
+/* BUTTON */
+.buy-btn.compact {
+  flex: 0 0 auto;
+  height: 48px;
+  min-width: 40px ; 
+  padding: 0 20px;
+  border-radius: 14px;
+  border: none;
+  background:
+    linear-gradient(135deg,
+      rgba(96,165,250,0.85),
+      rgba(59,130,246,0.85)
+    );
+  color: #020617;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.buy-btn.compact:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 36px rgba(96,165,250,0.35);
+}
+
+.buy-btn.compact:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================
+   SECONDARY MARKET
+========================= */
+.secondary-market {
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* SCROLLBAR */
+.secondary-market::-webkit-scrollbar {
+  width: 6px;
+}
+
+.secondary-market::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.12);
+  border-radius: 10px;
+}
+
+/* LIST */
+.secondary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* ROW */
+.secondary-row {
+  display: grid;
+  grid-template-columns: 2fr 1.4fr 1.4fr auto;
+  align-items: center;
+
+  padding: 14px 18px;
+  border-radius: 16px;
+
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.06);
+
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.secondary-row:hover {
+  background: rgba(255,255,255,0.055);
+  transform: translateY(-1px);
+}
+
+/* TEXT */
+.sec-price {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.sec-price span {
+  font-size: 12px;
+  opacity: 0.55;
+  margin-left: 6px;
+}
+
+.sec-qty {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.sec-date {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* BUY BTN */
+.sec-buy-btn {
+  padding: 7px 16px;
+  border-radius: 999px;
+
+  background: rgba(96,165,250,0.15);
+  color: #bfdbfe;
+
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(96,165,250,0.25);
+
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.sec-buy-btn:hover {
+  background: rgba(96,165,250,0.25);
+  transform: translateY(-1px);
+}
+
+.sec-buy-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* EMPTY */
+.empty-secondary {
+  padding: 14px;
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .property-buy-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.secondary-market.glass-card {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(32, 63, 124, 0.95),
+      rgba(8, 10, 14, 0.95)
+    );
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(0, 0, 0, 0.98);
+}
+
+.primary-market.glass-card {
+  background:
+    linear-gradient(
+      300deg,
+      rgba(16, 21, 30, 0.95),
+      rgba(25, 51, 103, 0.95)
+    );
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}

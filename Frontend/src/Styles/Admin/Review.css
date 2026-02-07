@@ -1,0 +1,248 @@
+.admin-freeze-page {
+  min-height: 100vh;
+  padding: 32px;
+  color: #e5e7eb;
+  font-family: "Inter", system-ui;
+}
+
+.admin-freeze-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.admin-freeze-title {
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+  color: #f3f4f6;
+}
+
+.admin-freeze-subtitle {
+  font-size: 13px;
+  color: #9ca3af;
+  line-height: 1.4;
+}
+
+.admin-loading,
+.admin-empty-text {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+
+.admin-freeze-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 40px;
+}
+
+/* CARD */
+.admin-freeze-card {
+  border-radius: 18px;
+  padding: 16px;
+  border: 1px solid #2c2c2e;
+  overflow: hidden;
+
+  background:
+    radial-gradient(900px 260px at 20% 0%, rgba(255,255,255,0.06), transparent 60%),
+    radial-gradient(700px 240px at 90% 110%, rgba(0,0,0,0.55), transparent 55%),
+    linear-gradient(180deg, rgba(59,130,246,0.025), rgba(0,0,0,0.0)),
+    #121216;
+
+  transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+}
+
+.admin-freeze-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(59,130,246,0.22);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.60);
+}
+
+/* TOP */
+.admin-freeze-card-top {
+  padding: 4px 4px 10px 4px;
+}
+
+.admin-freeze-card-titleRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.admin-property-name {
+  font-size: 16px;
+  font-weight: 650;
+  color: #f9fafb;
+  line-height: 1.25;
+  margin: 0;
+}
+
+/* SUBLINE */
+.admin-freeze-card-sub {
+  font-size: 13px;
+  color: #d1d5db;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.admin-muted {
+  color: #9ca3af;
+  font-weight: 600;
+}
+
+.admin-dot {
+  color: #6b7280;
+  margin: 0 2px;
+}
+
+.admin-token-pill {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #e5e7eb;
+  background: rgba(255,255,255,0.05);
+}
+
+/* META */
+.admin-freeze-card-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.admin-meta-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-meta-label {
+  font-size: 11px;
+  color: #9ca3af;
+  letter-spacing: 0.04em;
+}
+
+.admin-meta-value {
+  font-size: 13px;
+  color: #f3f4f6;
+  font-weight: 600;
+}
+
+/* DIVIDER */
+.admin-freeze-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  margin: 8px 0 12px 0;
+}
+
+/* BOTTOM */
+.admin-freeze-card-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* TEXTAREA */
+.admin-note {
+  width: 100%;
+  height: 90px;
+  resize: none;
+  border-radius: 14px;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(14,14,16,0.65);
+  color: #e5e7eb;
+  font-size: 13px;
+  line-height: 1.35;
+  outline: none;
+}
+
+.admin-note::placeholder {
+  color: rgba(156,163,175,0.75);
+}
+
+.admin-note:focus {
+  border-color: rgba(59,130,246,0.28);
+}
+
+/* BUTTON ROW */
+.admin-freeze-btnRow {
+  display: flex;
+  gap: 12px;
+}
+
+.admin-btn {
+  flex: 1;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.05);
+  color: #e5e7eb;
+  font-weight: 650;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform 0.14s ease, border-color 0.14s ease, background 0.14s ease;
+}
+
+.admin-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,0.16);
+}
+
+.admin-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* WARN + FREEZE COLORS (your vibe) */
+.admin-btn.admin-warn {
+  border-color: rgba(245, 158, 11, 0.30);
+  color: rgba(245, 158, 11, 0.90);
+  background: rgba(245, 158, 11, 0.12);
+}
+
+.admin-btn.admin-warn:hover {
+  border-color: rgba(245, 158, 11, 0.45);
+}
+
+.admin-btn.admin-freeze {
+  border-color: rgba(59, 130, 246, 0.28);
+  color: rgba(59, 130, 246, 0.90);
+  background: rgba(59, 130, 246, 0.12);
+}
+
+.admin-btn.admin-freeze:hover {
+  border-color: rgba(59, 130, 246, 0.42);
+}
+
+/* RESPONSIVE */
+@media (max-width: 520px) {
+  .admin-freeze-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-freeze-card {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .admin-note {
+    height: 86px;
+    border-radius: 12px;
+  }
+
+  .admin-btn {
+    border-radius: 12px;
+  }
+}

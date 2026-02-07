@@ -1,0 +1,351 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html,
+#root {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.auth-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.background-image {
+  background: url('https://i.pinimg.com/736x/93/11/85/93118536f1a0b9bc8c95f4f4a599c6cc.jpg') no-repeat center center/cover;
+  filter: blur(10px);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+.left-side,
+.right-side {
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+  position: relative;
+}
+
+.left-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.left-overlay h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+
+.right-overlay {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-box {
+  background: rgba(9, 136, 234, 0.182);
+  padding: 40px 30px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 380px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+}
+
+.form-box h3 {
+  text-align: center;
+
+  font-size: 1.9rem;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+
+  margin-bottom: 14px;
+  color: #ffffff;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.form-box h3::after {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 2px;
+
+  background: linear-gradient(to right,
+      #facc15,
+      transparent);
+
+  margin: 10px auto 0;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-box input {
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1rem;
+}
+
+.form-box input::placeholder {
+  color: #ccc;
+}
+
+.form-box button {
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.Login-btn:hover {
+  background-color: #0056b3;
+}
+
+.Login-btn {
+  background-color: #5dabff;
+}
+
+.toggle-btn {
+  background: none;
+  color: #ccc;
+  text-align: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.toggle-btn:hover {
+  color: #0b9812;
+}
+
+/* =========================
+   BRAND BLOCK (LEFT SIDE)
+========================= */
+.brand-block {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* LEFT ORIENTED TEXT */
+  justify-content: center;
+
+  gap: 4px;
+}
+
+/* BRAND TITLE */
+.brand-title {
+  font-size: 4.6rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+/* OWN */
+.brand-own {
+  color: #ffffff;
+}
+
+/* EXA (ACCENT) */
+.brand-exa {
+  color: #0eaaed;
+  /* gold tone */
+  margin-left: 4px;
+}
+
+/* TAGLINE */
+.brand-tagline {
+  font-size: 1.25rem;
+  line-height: 1.45;
+  margin-left: 4px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* 👈 LEFT EDGE SAME FOR BOTH LINES */
+}
+
+.brand-tagline span {
+  display: block;
+}
+
+
+
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .left-side {
+    display: none;
+    /* hide branding on small screens */
+  }
+
+  .right-side {
+    width: 100%;
+    height: 100%;
+  }
+
+  .right-overlay {
+    padding: 24px;
+  }
+
+  .form-box {
+    max-width: 100%;
+    padding: 32px 24px;
+    border-radius: 14px;
+  }
+
+  .form-box h3 {
+    font-size: 1.6rem;
+  }
+
+  .form-box input,
+  .form-box button {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+
+  .toggle-btn {
+    font-size: 0.85rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .form-box {
+    padding: 28px 20px;
+  }
+
+  .form-box h3 {
+    font-size: 1.45rem;
+  }
+
+  .form-box input {
+    padding: 11px;
+    font-size: 0.9rem;
+  }
+
+  .Login-btn {
+    padding: 12px;
+  }
+}
+
+
+
+
+@media (max-width: 1024px) {
+  .left-overlay {
+    padding: 32px;
+  }
+
+  .brand-title {
+    font-size: 3.8rem;
+  }
+
+  .brand-tagline {
+    font-size: 1.1rem;
+  }
+
+  .form-box {
+    max-width: 360px;
+  }
+}
+
+/* =========================
+   GENDER SELECT (IMPROVED)
+========================= */
+
+.gender-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+/* hide default radio */
+.gender-group input[type="radio"] {
+  display: none;
+}
+
+.gender-group label {
+  flex: 1;
+  text-align: center;
+
+  padding: 10px 0;
+  border-radius: 10px;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  color: #d1d5db;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* hover */
+.gender-group label:hover {
+  background: rgba(96, 165, 250, 0.18);
+  border-color: rgba(96, 165, 250, 0.35);
+  color: #ffffff;
+}
+
+/* selected state */
+.gender-group input[type="radio"]:checked + span,
+.gender-group input[type="radio"]:checked {
+  /* fallback safety */
+}
+
+.gender-group label:has(input[type="radio"]:checked) {
+  background: rgba(96, 165, 250, 0.35);
+  border-color: #60a5fa;
+  color: #ffffff;
+  box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.35);
+}

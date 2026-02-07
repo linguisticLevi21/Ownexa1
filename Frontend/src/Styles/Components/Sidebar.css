@@ -1,0 +1,108 @@
+/* =========================
+   FLOATING SIDEBAR
+========================= */
+
+.sidebar {
+  position: fixed;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: linear-gradient(180deg, #14161b, #101218);
+  padding: 14px;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  border: 1px solid #24262d;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+  z-index: 100;
+}
+
+/* =========================
+   SIDEBAR BUTTONS
+========================= */
+
+.sidebar button {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+
+  background: transparent;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #9ca3af;
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    transform 0.15s ease;
+}
+
+/* Hover */
+.sidebar button:hover {
+  background: #1a1d25;
+  color: #e5e7eb;
+}
+
+/* Active */
+.sidebar button.active {
+  background: #1f2933;
+  color: #f9fafb;
+}
+
+/* Optional: subtle press */
+.sidebar button:active {
+  transform: scale(0.96);
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: none;
+    height: 64px;
+    width: 100%;
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    padding: 0 16px;
+    border-radius: 0;
+
+    background: rgba(14, 15, 19, 0.85);
+    backdrop-filter: blur(16px);
+
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  .dashboard-layout {
+    display: block;
+  }
+
+  .dashboard-content {
+    margin-left: 0 !important;
+    padding-top: 80px; /* space for top bar */
+    width: 100%;
+  }
+}
