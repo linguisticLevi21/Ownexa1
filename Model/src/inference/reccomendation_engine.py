@@ -1,5 +1,5 @@
-from risk_profile_infer import predict_risk
-from return_predict_infer import predict_return
+from src.inference.risk_profile_infer import predict_risk
+from src.inference.return_predict_infer import predict_return
 import pandas as pd
 
 def recommend_properties(user, properties_df):

@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { User, Building2, FileText, PowerOff, Home, UserCheck } from "lucide-react";
+import { User, Building2, FileText, PowerOff, Home, UserCheck, BarChart } from "lucide-react";
 
 import "../../Styles/Components/Sidebar.css";
 
@@ -45,6 +45,14 @@ export default function AdminSidebar() {
         {({ isActive }) => (
           <button className={isActive ? "active" : ""} aria-label="Transactions">
             <FileText size={16} />
+          </button>
+        )}
+      </NavLink>
+
+      <NavLink to="/AdminDashboard/Analytics">
+        {({ isActive }) => (
+          <button className={isActive ? "active" : ""} aria-label="Analytics">
+            <BarChart size={16} />
           </button>
         )}
       </NavLink>

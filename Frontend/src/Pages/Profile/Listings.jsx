@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { ethers } from "ethers";
 import "../../Styles/Profile/Listing.css";
 
@@ -67,7 +69,7 @@ export default function ListingsPage() {
     const pricePerTokenInr = item.price_per_token_inr;
 
     if (blockchainId === undefined || blockchainId === null) {
-      alert("Missing blockchain listing id in this listing row.");
+      toast.error("Missing blockchain listing id in this listing row.");
       return;
     }
 
@@ -103,7 +105,7 @@ export default function ListingsPage() {
       setActiveListings((prev) => prev.filter((l) => l.id !== listingId));
     } catch (err) {
       console.error("Cancel failed:", err);
-      alert(err.message || "Cancel failed");
+      toast.error(err.message || "Cancel failed");
     } finally {
       setCancelLoadingId(null);
     }
@@ -114,92 +116,98 @@ export default function ListingsPage() {
   }
 
   return (
-    <div className="listings-page">
-      <section className="listings-section">
-        <h2 className="listings-title">Active Listings</h2>
+    <>
+      <ToastContainer position="top-right" autoClose={3000} />
+      <div className="listings-page">
+        <section className="listings-section">
+          <h2 className="listings-title">Active Listings</h2>
 
-        {activeListings.length === 0 ? (
-          <p className="listings-empty">No active listings</p>
-        ) : (
-          <div className="listings-grid">
-            {activeListings.map((item) => (
-              <div key={item.id} className="listing-card">
-                <h4 className="listing-name">{item.properties?.title}</h4>
+          {activeListings.length === 0 ? (
+            <p className="listings-empty">No active listings</p>
+          ) : (
+            <div className="listings-grid">
+              {activeListings.map((item) => (
+                <div key={item.id} className="listing-card">
+                  <h4 className="listing-name">{item.properties?.title}</h4>
 
-                <p className="listing-location">
-                  {item.properties?.city}, {item.properties?.state}
-                </p>
+                  <p className="listing-location">
+                    {item.properties?.city}, {item.properties?.state}
+                  </p>
 
-                <p className="listing-token">Token: {item.properties?.token_name}</p>
+                  <p className="listing-token">Token: {item.properties?.token_name}</p>
 
-                <div className="listing-meta">
-                  <div>
-                    <span>Bought For</span>
-                    <strong>₹{item.holdings?.avg_price_inr}</strong>
+                  <div className="listing-meta">
+                    <div>
+                      <span>Bought For</span>
+                      <strong>₹{item.holdings?.avg_price_inr}</strong>
+                    </div>
+
+                    <div>
+                      <span>Listed For</span>
+                      <strong>₹{item.price_per_token_inr}</strong>
+                    </div>
+
+                    <div>
+                      <span>Listed Quantity</span>
+                      <strong>{item.token_quantity}</strong>
+                    </div>
                   </div>
 
-                  <div>
-                    <span>Listed For</span>
-                    <strong>₹{item.price_per_token_inr}</strong>
-                  </div>
+                  <button
+                    className="listing-cancel"
+                    onClick={() => handleCancelListing(item)}
+                    disabled={cancelLoadingId === item.id}
+                  >
+                    {cancelLoadingId === item.id ? "Cancelling..." : "Cancel"}
+                  </button>
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
 
-                  <div>
-                    <span>Listed Quantity</span>
-                    <strong>{item.token_quantity}</strong>
+        {/* Divider */}
+        <div className="listings-divider"></div>
+
+        <section className="listings-section">
+          <h2 className="listings-title">Sold Listings</h2>
+
+          {soldListings.length === 0 ? (
+            <p className="listings-empty">No sold listings</p>
+          ) : (
+            <div className="listings-grid">
+              {soldListings.map((item) => (
+                <div key={item.id} className="listing-card sold">
+                  <h4 className="listing-name">{item.properties?.title}</h4>
+
+                  <p className="listing-location">
+                    {item.properties?.city}, {item.properties?.state}
+                  </p>
+
+                  <p className="listing-token">Token: {item.properties?.token_name}</p>
+
+                  <div className="listing-meta">
+                    <div>
+                      <span>Bought For</span>
+                      <strong>₹{item.holdings?.avg_price_inr}</strong>
+                    </div>
+
+                    <div>
+                      <span>Sold For</span>
+                      <strong>₹{item.price_per_token_inr}</strong>
+                    </div>
+
+                    <div>
+                      <span>Quantity</span>
+                      <strong>{item.token_quantity}</strong>
+                    </div>
                   </div>
                 </div>
-
-                <button
-                  className="listing-cancel"
-                  onClick={() => handleCancelListing(item)}
-                  disabled={cancelLoadingId === item.id}
-                >
-                  {cancelLoadingId === item.id ? "Cancelling..." : "Cancel"}
-                </button>
-              </div>
-            ))}
-          </div>
-        )}
-      </section>
-
-      <section className="listings-section">
-        <h2 className="listings-title">Sold Listings</h2>
-
-        {soldListings.length === 0 ? (
-          <p className="listings-empty">No sold listings</p>
-        ) : (
-          <div className="listings-grid">
-            {soldListings.map((item) => (
-              <div key={item.id} className="listing-card sold">
-                <h4 className="listing-name">{item.properties?.title}</h4>
-
-                <p className="listing-location">
-                  {item.properties?.city}, {item.properties?.state}
-                </p>
-
-                <p className="listing-token">Token: {item.properties?.token_name}</p>
-
-                <div className="listing-meta">
-                  <div>
-                    <span>Bought For</span>
-                    <strong>₹{item.holdings?.avg_price_inr}</strong>
-                  </div>
-
-                  <div>
-                    <span>Sold For</span>
-                    <strong>₹{item.price_per_token_inr}</strong>
-                  </div>
-
-                  <div>
-                    <span>Quantity</span>
-                    <strong>{item.token_quantity}</strong>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-      </section>
-    </div>
+              ))}
+            </div>
+          )}
+        </section>
+      </div>
+    </>
   );
 }

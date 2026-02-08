@@ -23,10 +23,11 @@ const FindHoldings = async (user) => {
         property_images,
         status,
         is_listed
-      )
+      ) ,
+       redeemed ,
+       holding_status
     `)
     .eq("user_id", user.id)
-    .eq("holding_status", true)
     .order("updated_at", { ascending: false });
 
   if (error) throw error;

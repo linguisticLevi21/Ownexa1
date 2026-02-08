@@ -3,10 +3,8 @@
 ================================ */
 .property-page {
   min-height: 100vh;
-  padding: 40px 20px;
-  background: radial-gradient(1200px 600px at top center,
-      #1a1a1d 0%,
-      #0f0f11 60%);
+  padding: 32px 48px;
+  /* Wider layout */
 }
 
 /* ================================
@@ -15,14 +13,10 @@
 .property-container {
   max-width: 1200px;
   margin: 0 auto;
-  background: linear-gradient(180deg,
-      rgba(30, 30, 34, 0.95),
-      rgba(18, 18, 20, 0.95));
-  border-radius: 24px;
-  padding: 32px;
-  box-shadow:
-    0 40px 100px rgba(0, 0, 0, 0.65),
-    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  background: transparent;
+  /* Remove card look */
+  border-radius: 0;
+  padding: 20px 0;
 }
 
 /* ================================
@@ -32,8 +26,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 24px;
 }
 
 .property-header h2 {
@@ -67,20 +62,16 @@
    CARDS
 ================================ */
 .preview-card {
-  background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.04),
-      rgba(0, 0, 0, 0.35));
-  border-radius: 18px;
-  padding: 18px;
+  background: transparent;
+  /* Blend with page */
+  border-radius: 0;
+  padding: 6px 6px;
+  /* More breathing space */
   margin-bottom: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none;
 }
 
-.preview-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-}
+
 
 .preview-label {
   font-size: 11px;
@@ -125,14 +116,21 @@
 ================================ */
 .preview-card input {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 10px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #e5e7eb;
+  padding: 12px 6px;
+  /* Bigger input area */
+  margin-bottom: 18px;
+  /* More spacing */
+
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.35);
+  /* Stronger line */
+
+  color: #f9fafb;
   outline: none;
-  transition: border 0.2s ease, background 0.2s ease;
+  font-size: 15px;
+
+  transition: border-color 0.2s ease, border-width 0.2s ease;
 }
 
 .preview-card input::placeholder {
@@ -140,8 +138,9 @@
 }
 
 .preview-card input:focus {
-  border-color: #22c55e;
-  background: rgba(255, 255, 255, 0.12);
+  border-bottom-color: #60a5fa;
+  border-bottom-width: 2px;
+  /* Emphasis on focus */
 }
 
 .preview-card input:disabled {
@@ -226,6 +225,7 @@
   font-size: 12px;
 }
 
+
 /* ================================
    ACTION BUTTON ROW
 ================================ */
@@ -233,12 +233,12 @@
   display: flex;
   gap: 12px;
   align-items: stretch;
+
 }
 
 .action-row button {
   flex: 1;
   height: 48px;
-  padding: 0;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -259,10 +259,12 @@
    ADMIN FORM LAYOUT
 ================================ */
 .admin-form-row {
+  padding: 12px 24px;
   display: grid;
   grid-template-columns: 1.4fr 2fr;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 20px;
+  /* More space between fields */
+  margin-bottom: 20px;
 }
 
 /* LEFT: vertical inputs */
@@ -275,20 +277,28 @@
 /* RIGHT: textarea */
 .admin-review-field textarea {
   width: 100%;
-  height: 100%;
-  min-height: 145px;
-  padding: 9px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #e5e7eb;
+  min-height: 160px;
+  /* Taller textarea */
+
+  padding: 12px 6px;
+
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.35);
+  /* Stronger line */
+
+  color: #f9fafb;
   resize: vertical;
   outline: none;
+  font-size: 15px;
+
+  transition: border-color 0.2s ease, border-width 0.2s ease;
 }
 
 .admin-review-field textarea:focus {
-  border-color: #22c55e;
-  background: rgba(255, 255, 255, 0.12);
+  border-bottom-color: #60a5fa;
+  border-bottom-width: 2px;
+  /* Emphasis on focus */
 }
 
 /* ================================

@@ -10,7 +10,7 @@ export const Analytics = async () => {
   return data;
 };
 
-export const AdminAnalytics = async (days = 14) => {
+export const AdminAnalytics = async (days = 90) => {
   const cutoff = new Date(Date.now() - (days - 1) * 24 * 60 * 60 * 1000)
     .toISOString()
     .slice(0, 10);
@@ -20,6 +20,8 @@ export const AdminAnalytics = async (days = 14) => {
     .select("day, tx_count, volume_inr")
     .gte("day", cutoff)
     .order("day", { ascending: true });
+
+  console.log("Admin dashboard data: ", data);
 
   if (error) throw error;
   return data || [];

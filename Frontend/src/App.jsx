@@ -18,7 +18,9 @@ import MarketLayout from "./Layouts/Market";
 import PropertiesPage from "./Pages/Profile/Properties";
 import Home from "./Components/Home";
 import AdminDashboardLayout from "./Layouts/AdminDashboard";
+import AdminLanding from "./Pages/Admin/AdminLanding";
 import Review from "./Pages/Admin/Review";
+import AdminAnalytics from "./Pages/Admin/AdminAnalytics";
 import NotFound from "./Components/Extra/NotFound";
 import ProtectedRoute from "./Components/ProtectedRoute";
 
@@ -68,14 +70,15 @@ function App() {
           <Route path="properties" element={<PropertiesPage />} />
         </Route>
 
-        <Route path="/AdminDashboard" element={<ProtectedRoute><AdminDashboardLayout /></ProtectedRoute>}>
-          <Route index element={<h1>Hello this is Admin Dashboard</h1>} />
+        <Route path="/AdminDashboard" element={<ProtectedRoute requiredRole={"Admin"}><AdminDashboardLayout /></ProtectedRoute>}>
+          <Route index element={<AdminLanding />} />
           <Route path="Pending" element={<AdminViewPage />} />
+          <Route path="Analytics" element={<AdminAnalytics />} />
           <Route path="Pending/Property/:id" element={<AdminPropertyPage />} />
           <Route path="Documents" element={<Review />} />
         </Route>
 
-        <Route path="*" element={<NotFound/>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
