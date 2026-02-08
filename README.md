@@ -123,7 +123,7 @@ npx hardhat run scripts/deploy.js --network sepolia
 
 ## 👨‍💻 Developer
 
-**Dhruv Kejriwal**
+**Shahadat Hussain**
 
 Full Stack Blockchain Developer
 
